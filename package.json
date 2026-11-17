@@ -14,5 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "playwright-core": "^1.49.1"
-  }
+  },
+  "type": "module"
 }
