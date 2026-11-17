@@ -1,5 +1,9 @@
 # Token Radar
 
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/jamesgan09/token-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/jamesgan09/token-radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+
 A token launch radar for make.fun's `token-radar-01` bounty: it reads a sealed
 DefiLlama snapshot (758 protocols, 40 on the watchlist), ranks the pre-token
 protocols by implied value, and renders a static, no-network dashboard with a
@@ -24,7 +28,7 @@ Age is the time since the protocol was first listed — how long it has run with
 no token. No protocol name is special-cased; the dashboard prints the whole
 comp table so every multiple can be checked against its own comps.
 
-## Run
+## Run it
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts --input input/snapshot.json
@@ -45,3 +49,7 @@ Node 22.18+ (type-stripping runs the `.ts` directly, standard library only).
 - `input/snapshot.json` — the sealed snapshot (read-only).
 - `vendor/makefun-board.ts` — the vendored dossier builder.
 - `check-gate.mjs` — local pre-flight mirroring the gate's seven checks.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
