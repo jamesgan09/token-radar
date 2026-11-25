@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/token-radar-01/jamesgan09/token-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 [![reward](https://make.fun/badge/token-radar-01/jamesgan09/token-radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
-A token launch radar for make.fun's `token-radar-01` bounty: it reads a sealed
+A token launch radar for make.fun's `token-radar-01` bounty. It reads a sealed
 DefiLlama snapshot (758 protocols, 40 on the watchlist), ranks the pre-token
 protocols by implied value, and renders a static, no-network dashboard with a
 farm plan for every row.
@@ -41,9 +41,9 @@ Node 22.18+ (type-stripping runs the `.ts` directly, standard library only).
 
 ## Layout
 
-- `main.ts` — entry point: parse snapshot, build board, write outputs.
-- `lib/model.ts` — the model, the comp table, farm plans, board validation.
-- `dashboard/` — static page: sortable/filterable board, per-protocol detail
+- `main.ts` — entry point: parse the snapshot, build the board, write the outputs.
+- `lib/model.ts` — the model, the comp table, the farm plans, board validation.
+- `dashboard/` — static page: sortable and filterable board, per-protocol detail
   with the model's own inputs and farm plan, live-token view, model panel.
 - `screenshots/` — board, detail and filtered views of the dashboard.
 - `input/snapshot.json` — the sealed snapshot (read-only).
