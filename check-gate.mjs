@@ -4,7 +4,11 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const OUTDIR = process.argv[2] ?? 'out';
-const SNAPSHOT = JSON.parse(readFileSync('input/snapshot.json', 'utf8'));
+// The snapshot is the sealed one the grader mounts at /input/snapshot.json; a
+// local run passes its path as the second argument (or SNAPSHOT_PATH). The repo
+// no longer carries a copy of it.
+const SNAPSHOT_PATH = process.argv[3] ?? process.env.SNAPSHOT_PATH ?? (existsSync('/input/snapshot.json') ? '/input/snapshot.json' : 'input/snapshot.json');
+const SNAPSHOT = JSON.parse(readFileSync(SNAPSHOT_PATH, 'utf8'));
 const bad = [];
 const check = (name, cond, detail = '') => {
   console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${detail ? ' — ' + detail : ''}`);

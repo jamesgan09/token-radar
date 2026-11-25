@@ -31,9 +31,14 @@ comp table so every multiple can be checked against its own comps.
 ## Run it
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts --input input/snapshot.json
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 node check-gate.mjs out   # local mirror of the gate's seven checks
 ```
+
+The snapshot is the sealed one the grader mounts at `/input/snapshot.json`
+(main.ts defaults to it). For a local run without that mount, pass
+`--input <path-to-snapshot.json>` — the kit ships the same sealed file under
+its `input/` directory.
 
 Node 22.18+ (type-stripping runs the `.ts` directly, standard library only).
 `main.ts` writes `board.json`, `data.js`, `dashboard/`, `screenshots/` and
@@ -46,9 +51,11 @@ Node 22.18+ (type-stripping runs the `.ts` directly, standard library only).
 - `dashboard/` — static page: sortable and filterable board, per-protocol detail
   with the model's own inputs and farm plan, live-token view, model panel.
 - `screenshots/` — board, detail and filtered views of the dashboard.
-- `input/snapshot.json` — the sealed snapshot (read-only).
 - `vendor/makefun-board.ts` — the vendored dossier builder.
 - `check-gate.mjs` — local pre-flight mirroring the gate's seven checks.
+
+The sealed snapshot itself is not committed here: the grader mounts it at
+`/input/snapshot.json` and every run reads those same bytes.
 
 ---
 
